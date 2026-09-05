@@ -1,0 +1,110 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Permet de voir un aperçu du site en local pendant l'écriture (optionnel)
+local_backend: true
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: simple
+
+collections:
+
+  # ==========================================================
+  # MUSIQUE > CONCERTS
+  # ==========================================================
+  - name: "musique-concerts"
+    label: "Musique / Concerts"
+    folder: "content/musique/concerts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "datetime" }
+      - label: "Catégories"
+        name: "categories"
+        widget: "list"
+        default: ["Musique", "Concerts"]
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Description courte", name: "description", widget: "text", required: false }
+      - { label: "Brouillon (non publié)", name: "draft", widget: "boolean", default: true }
+      - { label: "Image de couverture", name: "cover", widget: "image", required: false }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  # ==========================================================
+  # MUSIQUE > VINYLES
+  # ==========================================================
+  - name: "musique-vinyles"
+    label: "Musique / Vinyles"
+    folder: "content/musique/vinyles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "datetime" }
+      - label: "Catégories"
+        name: "categories"
+        widget: "list"
+        default: ["Musique", "Vinyles"]
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Description courte", name: "description", widget: "text", required: false }
+      - { label: "Brouillon (non publié)", name: "draft", widget: "boolean", default: true }
+      - { label: "Image de couverture", name: "cover", widget: "image", required: false }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  # ==========================================================
+  # CULTURE > THÉÂTRE
+  # ==========================================================
+  - name: "culture-theatre"
+    label: "Culture / Théâtre"
+    folder: "content/culture/theatre"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "datetime" }
+      - label: "Catégories"
+        name: "categories"
+        widget: "list"
+        default: ["Culture", "Théâtre"]
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Description courte", name: "description", widget: "text", required: false }
+      - { label: "Brouillon (non publié)", name: "draft", widget: "boolean", default: true }
+      - { label: "Image de couverture", name: "cover", widget: "image", required: false }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  # ==========================================================
+  # CULTURE > VOYAGES
+  # ==========================================================
+  - name: "culture-voyages"
+    label: "Culture / Voyages"
+    folder: "content/culture/voyages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "datetime" }
+      - label: "Catégories"
+        name: "categories"
+        widget: "list"
+        default: ["Culture", "Voyages"]
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Description courte", name: "description", widget: "text", required: false }
+      - { label: "Brouillon (non publié)", name: "draft", widget: "boolean", default: true }
+      - { label: "Image de couverture", name: "cover", widget: "image", required: false }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  # ==========================================================
+  # PAGES (Accueil, À propos, catégories...)
+  # ==========================================================
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "À propos"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Contenu", name: "body", widget: "markdown" }

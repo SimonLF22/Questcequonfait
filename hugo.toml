@@ -1,0 +1,105 @@
+baseURL = "https://monblog.netlify.app/"
+languageCode = "fr-fr"
+title = "Mon Blog"
+theme = "PaperMod"
+
+# Pagination (10 articles par page sur les listes)
+[pagination]
+  pagerSize = 10
+
+[params]
+  env = "production"
+  description = "Mon blog personnel"
+  author = "Simon"
+  defaultTheme = "auto"        # auto / light / dark
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = false
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  hideFooter = false
+
+  [params.label]
+    text = "Mon Blog"
+
+  [params.homeInfoParams]
+    Title = "Bienvenue 👋"
+    Content = "Un blog organisé par catégories : retrouvez tous les articles classés et faciles à explorer via le menu ci-dessus."
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+# ==========================================================
+# MENU PRINCIPAL
+# Structure à 2 niveaux : chaque entrée avec un "parent" devient
+# une sous-catégorie affichée en menu déroulant sous sa catégorie mère.
+# Le champ "weight" contrôle l'ordre d'affichage (du plus petit au plus grand).
+# Pour ajouter une nouvelle catégorie ou sous-catégorie : voir le guide
+# "3-creer-nouvelle-categorie.md".
+# ==========================================================
+[menu]
+
+  [[menu.main]]
+    identifier = "musique"
+    name = "Musique"
+    url = "/musique/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "musique-concerts"
+    name = "Concerts"
+    url = "/musique/concerts/"
+    parent = "musique"
+    weight = 11
+
+  [[menu.main]]
+    identifier = "musique-vinyles"
+    name = "Vinyles"
+    url = "/musique/vinyles/"
+    parent = "musique"
+    weight = 12
+
+  [[menu.main]]
+    identifier = "culture"
+    name = "Culture"
+    url = "/culture/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "culture-theatre"
+    name = "Théâtre"
+    url = "/culture/theatre/"
+    parent = "culture"
+    weight = 21
+
+  [[menu.main]]
+    identifier = "culture-voyages"
+    name = "Voyages"
+    url = "/culture/voyages/"
+    parent = "culture"
+    weight = 22
+
+  [[menu.main]]
+    identifier = "about"
+    name = "À propos"
+    url = "/about/"
+    weight = 90
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
