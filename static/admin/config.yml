@@ -55,9 +55,9 @@ collections:
       - { label: "Contenu", name: "body", widget: "markdown" }
 
   # ==========================================================
-  # MUSIQUE > CONCERTS
+  # MUSIQUE > SORTIES
   # ==========================================================
-  - name: "musique-concerts"
+  - name: "musique-sorties"
     label: "Musique / Sorties"
     folder: "content/musique/sorties"
     create: true
