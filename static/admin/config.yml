@@ -55,6 +55,27 @@ collections:
       - { label: "Contenu", name: "body", widget: "markdown" }
 
   # ==========================================================
+  # MUSIQUE > CONCERTS
+  # ==========================================================
+  - name: "musique-concerts"
+    label: "Musique / Sorties"
+    folder: "content/musique/sorties"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "datetime" }
+      - label: "Catégories"
+        name: "categories"
+        widget: "list"
+        default: ["Musique", "Concerts"]
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Description courte", name: "description", widget: "text", required: false }
+      - { label: "Brouillon (non publié)", name: "draft", widget: "boolean", default: true }
+      - { label: "Image de couverture", name: "cover", widget: "image", required: false }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  # ==========================================================
   # CULTURE > THÉÂTRE
   # ==========================================================
   - name: "culture-theatre"
