@@ -66,6 +66,13 @@ theme = "PaperMod"
     weight = 12
 
   [[menu.main]]
+    identifier = "musique-sorties"
+    name = "Sorties"
+    url = "/musique/sorties/"
+    parent = "musique"
+    weight = 12
+
+  [[menu.main]]
     identifier = "culture"
     name = "Culture"
     url = "/culture/"
