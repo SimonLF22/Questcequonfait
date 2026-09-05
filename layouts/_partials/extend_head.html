@@ -1,0 +1,20 @@
+<!--
+  Ce script permet à Netlify Identity de détecter automatiquement les liens
+  d'invitation, de réinitialisation de mot de passe, ou de confirmation
+  d'email, lorsqu'ils redirigent vers une page du site (et pas seulement
+  vers /admin/). Sans lui, ces liens atterrissent sur la page sans rien
+  déclencher.
+-->
+<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (user) {
+        // Une fois connecté depuis cette page, renvoyer vers l'admin
+        window.netlifyIdentity.on("login", function () {
+          window.location.href = "/admin/";
+        });
+      });
+    }
+  });
+</script>
